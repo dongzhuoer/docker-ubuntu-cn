@@ -1,4 +1,5 @@
-# ubuntu in China (not zh)
+# Ubuntu in China (not zh)
+[![Build Status](https://travis-ci.com/dongzhuoer/docker-ubuntu-cn.svg?branch=master)](https://travis-ci.com/dongzhuoer/docker-ubuntu-cn)
 
 1. tsinghua apt mirror
 1. UTF-8 locale, china timezone

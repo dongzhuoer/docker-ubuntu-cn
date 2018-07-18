@@ -1,0 +1,12 @@
+language: generic
+services: docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+script:
+  - docker build -t dongzhuoer/ubuntu-cn:rolling .
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u dongzhuoer --password-stdin
+  - docker push dongzhuoer/ubuntu-cn:rolling
