@@ -7,7 +7,7 @@
 	"tasks": [
         {
 			"label": "build",
-            "command": "docker build -t dongzhuoer/ubuntu-cn:rolling rolling",	
+            "command": "docker build -t dongzhuoer/ubuntu-cn:rolling .",	
             "group": {
                 "kind": "build",
                 "isDefault": true
