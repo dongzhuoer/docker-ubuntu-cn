@@ -8,5 +8,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors4.tuna.tsinghua.edu.cn/' /etc/apt/source
 
 # install tzdata
 RUN apt update && apt -y upgrade && apt -y install locales \
-    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen && update-locale LC_ALL=en_US.UTF-8 \
+    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen \
     && apt -y purge locales && apt -y autoremove && rm -r /var/lib/apt/lists/
+
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 
