@@ -4,20 +4,15 @@
     "presentation": {
         "reveal": "silent"
     },
-	"tasks": [
+    "tasks": [
         {
-			"label": "build",
-            "command": "docker build -t dongzhuoer/ubuntu-cn:rolling .",	
+            "label": "build",
+            "command": "docker build -t dongzhuoer/ubuntu-cn:rolling .",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            },		
+            },
             "problemMatcher": [],
         },
-        {
-			"label": "hello",
-			"command": "echo hello",			
-            "problemMatcher": [],
-		},
-	]
+    ]
 }
