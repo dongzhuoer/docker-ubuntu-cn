@@ -11,3 +11,6 @@ RUN apt update && apt -y upgrade && apt -y install locales && rm -r /var/lib/apt
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 
+
+# enable wildcard
+RUN echo "\n#enable wildcard\nshopt -s extglob" >> /etc/bash.bashrc
