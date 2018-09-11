@@ -2,10 +2,13 @@ language: generic
 services: docker
 
 script:
+  # build
   - docker build -t dongzhuoer/ubuntu-cn:rolling .
-
+  # deploy
   - echo "$DOCKER_PASSWORD" | docker login -u dongzhuoer --password-stdin
   - docker push dongzhuoer/ubuntu-cn:rolling
+  # test
+  - bash -e test.sh
 after_success:
   - body='{ "request":{"branch":"master", "message":"dongzhuoer/ubuntu-cn:rolling updated"} }'
   - curl -s -X POST -H "Content-Type:application/json" -H "Accept:application/json" -H "Travis-API-Version:3" -H "Authorization:token $TRAVIS_TOKEN" -d "$body" https://api.travis-ci.com/repo/dongzhuoer%2Fdocker-rlang/requests
