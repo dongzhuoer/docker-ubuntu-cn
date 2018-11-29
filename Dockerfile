@@ -12,5 +12,5 @@ RUN apt update && apt -y upgrade && apt -y install locales && rm -r /var/lib/apt
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 
 
-# enable wildcard
+# enable extended glob: http://mywiki.wooledge.org/glob#extglob
 RUN echo "\n#enable wildcard\nshopt -s extglob" >> /etc/bash.bashrc
