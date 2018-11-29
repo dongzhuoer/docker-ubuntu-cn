@@ -1,7 +1,7 @@
 # Overview
 [![Build Status](https://travis-ci.com/dongzhuoer/docker-ubuntu-cn.svg?branch=master)](https://travis-ci.com/dongzhuoer/docker-ubuntu-cn)
 
-Ubuntu in China (not zh)
+Ubuntu in China (not zh) Docker image
 
 `latest` tag is the same as the version used by Zhuoer Dong
 
