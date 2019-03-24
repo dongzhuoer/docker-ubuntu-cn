@@ -9,8 +9,5 @@ script:
   - docker push dongzhuoer/ubuntu-cn
   # test
   - bash -e test.sh
-after_success:
-  - body='{ "request":{"branch":"base", "message":"dongzhuoer/ubuntu-cn updated"} }'
-  - curl -s -X POST -H "Content-Type:application/json" -H "Accept:application/json" -H "Travis-API-Version:3" -H "Authorization:token $TRAVIS_TOKEN" -d "$body" https://api.travis-ci.com/repo/dongzhuoer%2Fdocker-rlang/requests
 notifications:
   email: false
