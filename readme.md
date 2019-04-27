@@ -11,6 +11,8 @@ Ubuntu in China (not zh) Docker image
 1. UTF-8 locale
 1. bash enable wildcard & extended glob
 
+I use `mirrors4` to avoild auto resolving, which wastes a lot of time sometimes (especially when you use network of NKU)
+
 # to do
 
 `ls /etc/*/+([0-9])*` only works for interactive shell
@@ -18,3 +20,5 @@ Ubuntu in China (not zh) Docker image
 ```bash
 docker run --rm dongzhuoer/ubuntu-cn:rolling bash -c 'ls /etc/*/+([0-9])*'
 ```
+
+

@@ -1,13 +1,16 @@
+dist: xenial
 language: generic
 services: docker
-
+env:
+  - tag=rolling"
+  - tag=latest
 script:
   # build
-  - docker build -t dongzhuoer/ubuntu-cn .
+  - docker build --build-arg tag=$tag -t dongzhuoer/ubuntu-cn:$tag .
   # deploy
   - echo "$DOCKER_PASSWORD" | docker login -u dongzhuoer --password-stdin
-  - docker push dongzhuoer/ubuntu-cn
-  # test
-  - bash -e test.sh
+  - docker push dongzhuoer/ubuntu-cn:$tag
+  # test (to do: utf8 & extended glob)
+  - docker run --rm dongzhuoer/ubuntu-cn:$tag bash -c "ls /usr/* -d"
 notifications:
   email: false

@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+ARG tag=latest
+FROM ubuntu:$tag
 
 LABEL maintainer="Zhuoer Dong <dongzhuoer@mail.nankai.edu.cn>"
 
