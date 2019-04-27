@@ -2,14 +2,20 @@ dist: xenial
 language: generic
 services: docker
 env:
-  - tag=rolling"
-  - tag=latest
+  - tag=18.04 aliases="bionic-20190424 bionic latest"
+  - tag=18.10 aliases="cosmic-20190418 cosmic"
+  - tag=19.04 aliases="disco-20190423 disco rolling"
+  - tag=14.04 aliases="trusty-20190425 trusty"
+  - tag=16.04 aliases="xenial-20190425 xenial"
+
 script:
   # build
   - docker build --build-arg tag=$tag -t dongzhuoer/ubuntu-cn:$tag .
+  - for alias in $aliases; do docker tag dongzhuoer/ubuntu-cn:$tag dongzhuoer/ubuntu-cn:$alias; done
   # deploy
   - echo "$DOCKER_PASSWORD" | docker login -u dongzhuoer --password-stdin
   - docker push dongzhuoer/ubuntu-cn:$tag
+  - for alias in $aliases; do docker push dongzhuoer/ubuntu-cn:$alias; done
   # test (to do: utf8 & extended glob)
   - docker run --rm dongzhuoer/ubuntu-cn:$tag bash -c "ls /usr/* -d"
 notifications:
