@@ -1,6 +1,7 @@
 {
     "version": "2.0.0",
     "type": "shell",
+    "problemMatcher": [],
     "presentation": {
         "reveal": "silent"
     },
@@ -12,7 +13,6 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [],
         },
     ]
 }

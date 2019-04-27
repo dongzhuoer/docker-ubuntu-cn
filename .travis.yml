@@ -16,7 +16,7 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u dongzhuoer --password-stdin
   - docker push dongzhuoer/ubuntu-cn:$tag
   - for alias in $aliases; do docker push dongzhuoer/ubuntu-cn:$alias; done
-  # test (to do: utf8 & extended glob)
-  - docker run --rm dongzhuoer/ubuntu-cn:$tag bash -c "ls /usr/* -d"
+  # test (to do: utf8)
+  - docker run --rm dongzhuoer/ubuntu-cn:$tag bash -i -c "ls /usr/lib/x86_+([0-9])-* -d"
 notifications:
   email: false
