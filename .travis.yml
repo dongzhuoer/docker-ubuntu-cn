@@ -2,11 +2,11 @@ dist: xenial
 language: generic
 services: docker
 env:
-  - tag=18.04 aliases="bionic-20190424 bionic latest"
-  - tag=18.10 aliases="cosmic-20190418 cosmic"
-  - tag=19.04 aliases="disco-20190423 disco rolling"
-  - tag=14.04 aliases="trusty-20190425 trusty"
-  - tag=16.04 aliases="xenial-20190425 xenial"
+  - tag=19.04 aliases="disco rolling"
+  - tag=18.10 aliases="cosmic"
+  - tag=18.04 aliases="bionic latest"
+  - tag=16.04 aliases="xenial"
+  - tag=14.04 aliases="trusty"
 
 script:
   # build
