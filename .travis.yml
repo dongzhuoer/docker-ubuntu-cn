@@ -1,6 +1,5 @@
-dist: xenial
-language: generic
-services: docker
+dist: bionic
+language: minimal
 env:
   - tag=19.10 aliases="eoan rolling"
   - tag=19.04 aliases="disco"
