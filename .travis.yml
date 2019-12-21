@@ -5,6 +5,8 @@ env:
   - tag=19.04 aliases="disco"
   - tag=18.04 aliases="bionic latest"
   - tag=16.04 aliases="xenial"
+notifications:
+  email: false
 
 script:
   # build
@@ -16,5 +18,3 @@ script:
   - for alias in $aliases; do docker push dongzhuoer/ubuntu-cn:$alias; done
   # test (to do: utf8)
   - docker run --rm dongzhuoer/ubuntu-cn:$tag bash -i -c "ls /usr/lib/x86_+([0-9])-* -d"
-notifications:
-  email: false
