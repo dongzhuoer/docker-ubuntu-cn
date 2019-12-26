@@ -5,9 +5,6 @@ env:
   - tag=19.04 aliases="disco"
   - tag=18.04 aliases="bionic latest"
   - tag=16.04 aliases="xenial"
-notifications:
-  email: false
-
 script:
   # build
   - docker build --build-arg tag=$tag -t dongzhuoer/ubuntu-cn:$tag .
