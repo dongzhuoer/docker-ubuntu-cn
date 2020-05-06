@@ -1,9 +1,10 @@
 dist: bionic
 language: minimal
 env:
-  - tag=19.10 aliases="eoan rolling"
+  - tag=20.04 aliases="focal latest rolling"
+  - tag=19.10 aliases="eoan"
   - tag=19.04 aliases="disco"
-  - tag=18.04 aliases="bionic latest"
+  - tag=18.04 aliases="bionic "
   - tag=16.04 aliases="xenial"
 script:
   # build
